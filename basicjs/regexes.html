@@ -1,0 +1,25 @@
+<div class="jm_html">
+<input type="text" id="regexer"><br>
+<button id="regex_button">Does the input box contain an 'e'?</button>
+<button id="regex_button_jquery">
+    Does the input box contain 'e' (with JQuery)?</button>
+</div>
+
+<script>
+var jmJsFunc = function() {
+// raw javascript
+document.getElementById("regex_button").onclick = function() {
+  var content = document.getElementById("regexer").value;
+  var match = /[Ee]/.test(content)
+  alert(match);
+};
+
+// With JQuery;
+$("#regex_button_jquery").click(function() {
+  var content = $("#regexer").val();
+  var match = /[Ee]/.test(content)
+  alert(match);
+});
+};
+jmJsFunc();
+</script>
