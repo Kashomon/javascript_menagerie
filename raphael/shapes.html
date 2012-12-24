@@ -1,0 +1,21 @@
+<h4>A Circle</h4>
+
+<div class="jm_html">
+  <div id="raphael_container"></div>
+</div>
+
+<div class="jm_html">
+
+<script>
+var jmJsFuncs = [
+function() {
+
+// Creates canvas in raphael_container
+var paper = Raphael('raphael_container', "100%", "100%");
+// Creates circle at x = 50, y = 40, with radius 10
+var circle = paper.circle(50, 40, 10);
+// Sets the fill attribute of the circle to red (#f00)
+circle.attr("fill", "#f00");
+
+}]
+</script>

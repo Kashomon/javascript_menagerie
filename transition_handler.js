@@ -32,8 +32,10 @@ var jsmenagerie = {
     $(displaybox).append(content);
 
     $('.jm_html').each(function(i) {
+      var func = undefined;
       if (jmJsFuncs !== undefined && jmJsFuncs[i] !== undefined) {
-        var contents = jmJsFuncs[i].toString()
+        func = jmJsFuncs[i];
+        var contents = func.toString()
           .replace(/\s*function \(\) {/, "")
           .replace(/^\s*/, "")
           .replace(/\s*}$/, "");
@@ -53,6 +55,7 @@ var jsmenagerie = {
           contents +
           '</pre>' +
           '</div>');
+      func();
     });
     prettyPrint();
     $(displaybox).attr({type: "visible"});
