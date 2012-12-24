@@ -10,14 +10,14 @@ var jmJsFunc = function() {
 // raw javascript
 document.getElementById("regex_button").onclick = function() {
   var content = document.getElementById("regexer").value;
-  var match = /[Ee]/.test(content)
+  var match = /[Ee]/.test(content);
   alert(match);
 };
 
 // With JQuery;
 $("#regex_button_jquery").click(function() {
   var content = $("#regexer").val();
-  var match = /[Ee]/.test(content)
+  var match = /[Ee]/.test(content);
   alert(match);
 });
 };
