@@ -43,10 +43,13 @@ var jsmenagerie = {
           '</div>');
     });
     if (jmJsFunc !== undefined) {
+      var contents = jmJsFunc.toString()
+        .replace(/\s*function \(\) {/, "")
+        .replace(/\s*}$/, "");
       $(displaybox).append(
           '<div class="display_jm_js">' +
           '<pre class="prettyprint language-javascript">' +
-          jmJsFunc.toString() + '</pre>' +
+          contents + '</pre>' +
           '</div>');
     }
     prettyPrint();

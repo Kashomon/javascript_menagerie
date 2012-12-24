@@ -1,0 +1,37 @@
+<strong>Sonnet CXXIV</strong>
+
+<div class="jm_html">
+<p id="sonnet">
+If my dear love were but the child of state,<br>
+It might for Fortune's bastard be unfather'd'<br>
+As subject to Time's love or to Time's hate,<br>
+Weeds among weeds, or flowers with flowers gather'd.<br>
+No, it was builded far from accident;<br>
+It suffers not in smiling pomp, nor falls<br>
+Under the blow of thralled discontent,<br>
+Whereto the inviting time our fashion calls:<br>
+It fears not policy, that heretic,<br>
+Which works on leases of short-number'd hours,<br>
+But all alone stands hugely politic,<br>
+That it nor grows with heat nor drowns with showers.<br>
+To this I witness call the fools of time,<br>
+Which die for goodness, who have lived for crime.
+</p>
+<button id="sonnetbutton">Get Sonnet!</button>
+<button id="sonnetbutton_jquery">Get Sonnet with JQuery!</button>
+</div>
+
+<script>
+var jmJsFunc = function() {
+// With raw javascript
+document.getElementById("sonnetbutton").onclick = function() {
+  alert(document.getElementById("sonnet").innerHTML);
+};
+
+// With JQuery;
+$("#sonnetbutton_jquery").click(function() {
+  alert($("#sonnet").html());
+});
+};
+jmJsFunc();
+</script>
