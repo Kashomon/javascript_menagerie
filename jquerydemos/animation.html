@@ -14,7 +14,8 @@
 
 <div class="jm_js">
 <script>
-var jmJsFunc = function() {
+var jmJsFuncs = [function() {
+
 var toggle = 0;
 $("#go").click(function(){
   if (!toggle) {
@@ -36,8 +37,9 @@ $("#go").click(function(){
   }
   toggle = 1 - toggle;
 });
-}
 
-jmJsFunc();
+}];
+
+jsmenagerie.callAll(jmJsFuncs);
 </script>
 </div>

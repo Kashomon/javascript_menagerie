@@ -6,7 +6,8 @@
 </div>
 
 <script>
-var jmJsFunc = function() {
+var jmJsFuncs = [function() {
+
 // raw javascript
 document.getElementById("regex_button").onclick = function() {
   var content = document.getElementById("regexer").value;
@@ -20,6 +21,8 @@ $("#regex_button_jquery").click(function() {
   var match = /[Ee]/.test(content);
   alert(match);
 });
-};
-jmJsFunc();
+
+}];
+
+jsmenagerie.callAll(jmJsFuncs);
 </script>

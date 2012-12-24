@@ -26,34 +26,42 @@ var jsmenagerie = {
 
   // Actually replace the content on the website
   replaceContent: function(content) {
-    jmJsFunc = undefined;
+    jmJsFuncs = undefined;
     $(displaybox).attr({type: "hidden"})
     $(displaybox).empty();
     $(displaybox).append(content);
+
     $('.jm_html').each(function(i) {
+      if (jmJsFuncs !== undefined && jmJsFuncs[i] !== undefined) {
+        var contents = jmJsFuncs[i].toString()
+          .replace(/\s*function \(\) {/, "")
+          .replace(/^\s*/, "")
+          .replace(/\s*}$/, "");
+        $(this).after(
+            '<div class="display_jm_js">' +
+            '<pre class="prettyprint language-javascript">' +
+            contents + '</pre>' +
+            '</div>');
+      }
       var contents = $(this).html();
       contents = contents.replace(/</g, "&lt;");
       contents = contents.replace(/>/g, "&gt;");
       contents = contents.replace(/^\s*/g, "");
-      $(displaybox).append(
+      $(this).after(
           '<div class="display_jm_html">' +
           '<pre class="prettyprint language-html">\n' +
           contents +
           '</pre>' +
           '</div>');
     });
-    if (jmJsFunc !== undefined) {
-      var contents = jmJsFunc.toString()
-        .replace(/\s*function \(\) {/, "")
-        .replace(/\s*}$/, "");
-      $(displaybox).append(
-          '<div class="display_jm_js">' +
-          '<pre class="prettyprint language-javascript">' +
-          contents + '</pre>' +
-          '</div>');
-    }
     prettyPrint();
     $(displaybox).attr({type: "visible"});
+  },
+
+  callAll: function(funcArr) {
+    for (var i = 0; i < funcArr.length; i++) {
+      funcArr[i]();
+    }
   }
 };
 
@@ -95,4 +103,5 @@ $(document).ready(function() {
   jsmenagerie.hashChange(defaultPage);
 });
 
+window.jsmenagerie = jsmenagerie;
 })();
