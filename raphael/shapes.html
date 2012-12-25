@@ -1,21 +1,46 @@
-<h4>A Circle</h4>
 
+<h4>A Raphael Canvas</h4>
 <div class="jm_html">
-  <div id="raphael_container"></div>
+  <div id="span9 raphael_container"></div>
 </div>
 
+<h4>Create a Circle</h4>
 <div class="jm_html">
+</div>
+
+<h4>Create a Rectangle</h4>
+<div class="jm_html"></div>
+
+
+<h4>Create an ellipse</h4>
+<div class="jm_html"></div>
 
 <script>
 var jmJsFuncs = [
 function() {
 
 // Creates canvas in raphael_container
-var paper = Raphael('raphael_container', "100%", "100%");
+globalPaper = Raphael('span9 raphael_container', "100%", "30%");
+
+}, function() {
+
 // Creates circle at x = 50, y = 40, with radius 10
-var circle = paper.circle(50, 40, 10);
+var circle = globalPaper.circle(50, 40, 10);
 // Sets the fill attribute of the circle to red (#f00)
 circle.attr("fill", "#f00");
 
+}, function() {
+
+// regular rectangle (width=50, height=50).
+var r = globalPaper.rect(60, 60, 50, 50);
+
+// rectangle with rounded corners
+var c = globalPaper.rect(150, 40, 50, 50, 10);
+c.attr("fill", "green");
+
+}, function() {
+
+var e = globalPaper.ellipse(300, 80, 40, 70);
+e.attr("fill", "90-#f00:5-#00f:95");
 }]
 </script>

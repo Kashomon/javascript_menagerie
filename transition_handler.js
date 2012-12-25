@@ -45,17 +45,22 @@ var jsmenagerie = {
             contents + '</pre>' +
             '</div>');
       }
-      var contents = $(this).html();
-      contents = contents.replace(/</g, "&lt;");
-      contents = contents.replace(/>/g, "&gt;");
-      contents = contents.replace(/^\s*/g, "");
-      $(this).after(
-          '<div class="display_jm_html">' +
-          '<pre class="prettyprint language-html">\n' +
-          contents +
-          '</pre>' +
-          '</div>');
-      func();
+      var contents = $(this).html()
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/^\s*/g, "");
+      // Test to make sure the contents is not empty
+      if (!/^\s*$/.test(contents)) {
+        $(this).after(
+            '<div class="display_jm_html">' +
+            '<pre class="prettyprint language-html">\n' +
+            contents +
+            '</pre>' +
+            '</div>');
+      }
+      if (func !== undefined) {
+        func();
+      }
     });
     prettyPrint();
     $(displaybox).attr({type: "visible"});

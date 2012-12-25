@@ -14,30 +14,33 @@ As subject to Time's love or to Time's hate,<br>
 Weeds among weeds, or flowers with flowers gather'd.<br>
 </p>
 <button id="sonnetbutton">Get Sonnet!</button>
+</div>
+
+
+<div class="jm_html">
 <button id="sonnetbutton_jquery">Get Sonnet with JQuery!</button>
 </div>
 
 <script>
-var jmJsFuncs = [
-function() {
+var jmJsFuncs = [function() {
 
 document.getElementById("imabutton").onclick = function() {
   alert("I'm a button!");
 };
 
-},
-function() {
+}, function() {
 
 // With raw javascript
 document.getElementById("sonnetbutton").onclick = function() {
   alert(document.getElementById("sonnet").innerHTML);
 };
 
+}, function() {
+
 // With JQuery;
 $("#sonnetbutton_jquery").click(function() {
   alert($("#sonnet").html());
 });
 
-}
-];
+}];
 </script>
