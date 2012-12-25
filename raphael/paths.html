@@ -1,0 +1,36 @@
+
+<div class="jm_html">
+<div id="span9 raphael_container"></div>
+<p>Let's first create the canvas</p>
+</div>
+
+<p>Raphael lines are just standard SVG (Scalable Vector Graphics) lines.  Here,
+  we create a diagonal line</p>
+<div class="jm_html"></div>
+
+<p>You can render any SVG path in Raphael, such as those you get from
+Illustrator or Inkscape</p>
+<div class="jm_html"></div>
+
+<script>
+
+jmJsFuncs = [function() {
+
+globalPaper = Raphael('span9 raphael_container', "100%", "30%");
+
+}, function() {
+
+// Here, we create a diagonal line. It starts at (150px, 50px) and travels to
+//the right 30px and down 50px
+var path = globalPaper.path("M150,50 l30,50");
+path.attr({'stroke': 'blue'});
+
+}, function() {
+
+// Here, we create half-circle and arrow.
+var path =globalPaper.path("M12.582,9.551C3.251,16.237,0.921,29.021,7.08,38.564l-2.36,1.689l4.893,2.262l4.893,2.262l-0.568-5.36l-0.567-5.359l-2.365,1.694c-4.657-7.375-2.83-17.185,4.352-22.33c7.451-5.338,17.817-3.625,23.156,3.824c5.337,7.449,3.625,17.813-3.821,23.152l2.857,3.988c9.617-6.893,11.827-20.277,4.935-29.896C35.591,4.87,22.204,2.658,12.582,9.551z").attr({stroke: "none", fill: "#000"})
+path.attr({'fill': 'red'});
+
+}]
+</script>
+

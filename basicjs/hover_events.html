@@ -1,3 +1,28 @@
 <div class="jm_html">
-
+<div id="div_hoverer">Hover over me!</div>
 </div>
+
+
+<div class="jm_html">
+<div id="div_hoverer_jquery">Hover over me (uses JQuery)!</div>
+</div>
+
+<script>
+var jmJsFuncs = [function() {
+
+var elem = document.getElementById('div_hoverer');
+elem.onmouseover = function() {
+  elem.style.color = 'red';
+};
+elem.onmouseout = function() {
+  elem.style.color = 'black';
+};
+}, function() {
+$('#div_hoverer_jquery').hover(
+    function() {
+      $(this).css('color', 'red');
+    }, function() {
+      $(this).css('color', 'black');
+    });
+}];
+</script>
