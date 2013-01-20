@@ -1,6 +1,10 @@
 <div class="jm_html">
 <input type="text" id="regexer"><br>
 <button id="regex_button">Does the input box contain an 'e'?</button>
+</div>
+
+<div class="jm_html">
+<input type="text" id="regexer_jquery"><br>
 <button id="regex_button_jquery">
     Does the input box contain 'e' (with JQuery)?</button>
 </div>
@@ -14,10 +18,10 @@ document.getElementById("regex_button").onclick = function() {
   var match = /[Ee]/.test(content);
   alert(match);
 };
-
+}, function() {
 // With JQuery;
 $("#regex_button_jquery").click(function() {
-  var content = $("#regexer").val();
+  var content = $("#regexer_jquery").val();
   var match = /[Ee]/.test(content);
   alert(match);
 });
