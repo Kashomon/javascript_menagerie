@@ -1,3 +1,3 @@
-The Javascript Menagerie! 
+The Javascript Menagerie!
 
 Hello World
