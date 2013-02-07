@@ -12,11 +12,16 @@
 <div class="jmsquare"></div>
 </div>
 
+<button id="fade">Reappear!</button>
+
 <script>
 var jmJsFuncs = [function() {
 
 $(document).ready(function() {
   $('.jmsquare').fadeOut('slow');
+  $("#fade").click(function() {
+  	$('.jmsquare').fadeIn('slow');
+  });
 });
 }];
 </script>
