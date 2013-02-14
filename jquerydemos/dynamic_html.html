@@ -1,0 +1,25 @@
+<style type="text/css">
+  .textblock {
+  	color: #464646;
+  	font-family: verdana, arial, sans-serif;
+  	font-size: large;
+  }
+</style>
+
+
+
+<div class="textblock">hello world</div>
+<br>
+<button id="maketext">Change the text</button>
+
+
+
+<script>
+var words = ["sup", "your", "face", "is", "cool"];
+$(document).ready(function(){
+  $("#maketext").click(function() {
+  	$(".textblock").text("new world");
+  });
+});
+
+</script>
