@@ -11,7 +11,8 @@
 </style>
 <div class="jmsquare"></div>
 <br>
-<button id="fade">Reappear!</button>
+<button id="fadeout">Fade Out</button>
+<button id="fadein">Fade In</button>
 </div>
 
 
@@ -20,8 +21,10 @@
 var jmJsFuncs = [function() {
 
 $(document).ready(function() {
-  $('.jmsquare').fadeOut('slow');
-  $("#fade").click(function() {
+  $("#fadeout").click(function(){
+    $('.jmsquare').fadeOut('slow');
+   });
+  $("#fadein").click(function() {
   	$('.jmsquare').fadeIn('slow');
   });
 });
