@@ -1,17 +1,15 @@
 <style type="text/css">
   .textblock {
-  	color: #464646;
-  	font-family: verdana, arial, sans-serif;
-  	font-size: large;
+    color: #464646;
+    font-family: verdana, arial, sans-serif;
+    font-size: large;
   }
     .textblock2 {
-  	color: #464646;
-  	font-family: verdana, arial, sans-serif;
-  	font-size: large;
+    color: #464646;
+    font-family: verdana, arial, sans-serif;
+    font-size: large;
   }
 </style>
-
-
 
 <div class="textblock">hello world</div>
 <br>
@@ -22,15 +20,13 @@
 <br>
 <button id="makesentence">Make a Sentence</button>
 
-
-
 <script>
 var words = ["sup", "your", "face", "is", "cool"];
 var wordToggle = 0;
 $(document).ready(function(){
   $("#maketext").click(function() {
     wordToggle = (1 + wordToggle) % words.length;
-  	  $(".textblock").text(words[wordToggle]);
+      $(".textblock").text(words[wordToggle]);
   });
 });
 
