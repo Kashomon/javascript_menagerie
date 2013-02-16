@@ -4,22 +4,41 @@
   	font-family: verdana, arial, sans-serif;
   	font-size: large;
   }
+    .textblock2 {
+  	color: #464646;
+  	font-family: verdana, arial, sans-serif;
+  	font-size: large;
+  }
 </style>
 
 
 
 <div class="textblock">hello world</div>
 <br>
-<button id="maketext">Change the text</button>
+<button id="maketext">Change the Text</button>
+<br>
+<br>
+<div class="textblock2">hi world</div>
+<br>
+<button id="makesentence">Make a Sentence</button>
 
 
 
 <script>
 var words = ["sup", "your", "face", "is", "cool"];
+var wordToggle = 0;
 $(document).ready(function(){
   $("#maketext").click(function() {
-  	$(".textblock").text("new world");
+    wordToggle = (1 + wordToggle) % words.length;
+  	  $(".textblock").text(words[wordToggle]);
   });
 });
+
+$(document).ready(function(){
+  $("makesentence").click(function(){
+  	  $(".textblock2").append("hi world").addClass(words)
+});
+ 
+
 
 </script>
