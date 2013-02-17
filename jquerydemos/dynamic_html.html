@@ -47,14 +47,14 @@ var nounToggle = 0;
 
 $('#changenoun').click(function() {
   nounToggle = (1 + nounToggle) % nouns.length;
-  $('.noun').text(words[wordToggle]);
+  $('.nouns').text(nouns[nounToggle]);
 });
 
 $('#makeinsult').click(function() {
-  var foo = $('.noun').text();
+  var foo = $('.nouns').text();
   var moddy = modifiers[0];
   var insult = moddy + foo;
-  $('.noun').text(insult);
+  $('.nouns').text(insult);
 });
 
 
