@@ -58,7 +58,8 @@ $('#makeinsult').click(function() {
   }
   else {
     var foo = $('.nouns').text();
-    var moddy = modifiers[0];
+    var number = Math.floor(Math.random() * modifiers.length);
+    var moddy = modifiers[number];
     var insult = moddy + " "+ foo;
     $('.nouns').text(insult); 
     insulted = true;
