@@ -4,10 +4,26 @@
   	font-family: verdana, arial, sans-serif;
   	font-size: large;
   }
-    .textblock2 {
+    .texty {
   	color: #464646;
   	font-family: verdana, arial, sans-serif;
   	font-size: large;
+  }
+  .box {
+    background-color:#BEED80;
+    height: 100px;
+    width: 100px;
+    border: 1px solid;
+    border-radius:10px;
+    -moz-border-radius:10px;
+  }
+  .box2 {
+    background-color:#59D999;
+    height: 50px;
+    width: 50px;
+    border: 1px solid;
+    border-radius:10px;
+    -moz-border-radius:10px;
   }
 </style>
 
@@ -18,21 +34,40 @@
 <button id="maketext">Change the Text</button>
 <br>
 <br>
-<div class="textblock2">hi world</div>
+<div class="texty">so is your mom</div>
 <br>
-<button id="makesentence">Make a Sentence</button>
+<button id="sentence">Make insult</button>
+<br>
+<br>
+<div class="box"></div>
+<br>
+<button id="boxplay">Change the Box</button>
+
 
 
 
 <script>
-var words = ["sup", "your", "face", "is", "cool"];
+var words = ["unskilled", "lacking charm", "with no wit", "bland", "ok"];
 var wordToggle = 0;
+
 $(document).ready(function(){
   $("#maketext").click(function() {
     wordToggle = (1 + wordToggle) % words.length;
   	  $(".textblock").text(words[wordToggle]);
   });
 });
+
+
+$('#boxplay').click(function(){
+  $('.box').append('<div class="box2"></div>');
+});
+
+
+$('#sentence').click(function(){
+  $('.texty').appendTo('.textblock');
+});
+
+
 
 
 </script>
