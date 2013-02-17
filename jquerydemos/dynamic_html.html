@@ -44,19 +44,26 @@ var nouns = ["waffle", "mouse", "cow", "pigglet", "rhino", "bird of paradise", "
 var modifiers = ["Your countenance is like a", "Vexing", "Ugly", "Yeasty", "Guzzling", "Smelly", "Stupid", "Tittling"];
 
 var nounToggle = 0; 
+var insulted = false; 
 
 $('#changenoun').click(function() {
   nounToggle = (1 + nounToggle) % nouns.length;
   $('.nouns').text(nouns[nounToggle]);
+  insulted = false;
 });
 
 $('#makeinsult').click(function() {
-  var foo = $('.nouns').text();
-  var moddy = modifiers[0];
-  var insult = moddy + foo;
-  $('.nouns').text(insult);
+  if (insulted) {
+    // do nothing: already insulted
+  }
+  else {
+    var foo = $('.nouns').text();
+    var moddy = modifiers[0];
+    var insult = moddy + " "+ foo;
+    $('.nouns').text(insult); 
+    insulted = true;
+  }
 });
-
 
 $('#boxplay').click(function(){
   $('.box').append('<div class="box2"></div>');
