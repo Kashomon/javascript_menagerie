@@ -1,13 +1,15 @@
 <style type="text/css">
   .textblock {
-  	color: #464646;
-  	font-family: verdana, arial, sans-serif;
-  	font-size: large;
+    color: #464646;
+    font-family: verdana, arial, sans-serif;
+    font-size: large;
   }
-    .texty {
-  	color: #464646;
-  	font-family: verdana, arial, sans-serif;
-  	font-size: large;
+
+  .texty {
+  color: #464646;
+  font-family: verdana, arial, sans-serif;
+  font-size: large;
+
   }
   .box {
     background-color:#BEED80;
@@ -27,8 +29,6 @@
   }
 </style>
 
-
-
 <div class="textblock">hello world</div>
 <br>
 <button id="maketext">Change the Text</button>
@@ -44,8 +44,6 @@
 <button id="boxplay">Change the Box</button>
 
 
-
-
 <script>
 var words = ["unskilled", "lacking charm", "with no wit", "bland", "ok"];
 var wordToggle = 0;
@@ -53,7 +51,7 @@ var wordToggle = 0;
 $(document).ready(function(){
   $("#maketext").click(function() {
     wordToggle = (1 + wordToggle) % words.length;
-  	  $(".textblock").text(words[wordToggle]);
+      $(".textblock").text(words[wordToggle]);
   });
 });
 
@@ -71,3 +69,4 @@ $('#sentence').click(function(){
 
 
 </script>
+
