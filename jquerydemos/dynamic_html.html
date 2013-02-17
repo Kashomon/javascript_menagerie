@@ -1,11 +1,5 @@
 <style type="text/css">
-  .textblock {
-    color: #464646;
-    font-family: verdana, arial, sans-serif;
-    font-size: large;
-  }
-
-  .texty {
+  .noun {
   color: #464646;
   font-family: verdana, arial, sans-serif;
   font-size: large;
@@ -29,44 +23,42 @@
   }
 </style>
 
-<div class="textblock">hello world</div>
+<div class="noun"> Noun </div>
 <br>
-<button id="maketext">Change the Text</button>
-<br>
-<br>
-<div class="texty">so is your mom</div>
-<br>
-<button id="sentence">Make insult</button>
+<button id="changenoun"> Change </button>
+<button id="makeinsult"> Make Insult </button>
+
 <br>
 <br>
 <div class="box"></div>
 <br>
-<button id="boxplay">Change the Box</button>
+<button id="boxplay">Append a tiny Box</button>
 
 
 <script>
-var words = ["unskilled", "lacking charm", "with no wit", "bland", "ok"];
-var wordToggle = 0;
 
-$(document).ready(function(){
-  $("#maketext").click(function() {
-    wordToggle = (1 + wordToggle) % words.length;
-      $(".textblock").text(words[wordToggle]);
-  });
-});
+var nouns = ["waffle", "mouse", "cow", "pigglet", "rhino", "bird of paradise", "cocoon", "booger", "buttox", "treebeard"];
+
+var modifiers = ["Your countenance is like a", "Vexing", "Ugly", "Yeasty", "Guzzling", "Smelly", "Stupid", "Tittling"];
+
+var nounToggle = 0; 
+
+$('#changenoun').click(function() {
+  nounToggle = (1 + nounToggle) % nouns.length;
+  $('.noun').text(words[wordToggle]);
+)};
+
+$('#makeinsult').click(function() {
+  var foo = $('.noun').text();
+  var moddy = modifiers[0];
+  var insult = moddy + foo;
+  $('.noun').text(insult);
+)};
 
 
 $('#boxplay').click(function(){
   $('.box').append('<div class="box2"></div>');
 });
-
-
-$('#sentence').click(function(){
-  $('.texty').appendTo('.textblock');
-});
-
-
-
 
 </script>
 
