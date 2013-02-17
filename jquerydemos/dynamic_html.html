@@ -3,8 +3,8 @@
   color: #464646;
   font-family: verdana, arial, sans-serif;
   font-size: large;
-
   }
+
   .box {
     background-color:#BEED80;
     height: 100px;
@@ -13,6 +13,7 @@
     border-radius:10px;
     -moz-border-radius:10px;
   }
+
   .box2 {
     background-color:#59D999;
     height: 50px;
@@ -21,6 +22,7 @@
     border-radius:10px;
     -moz-border-radius:10px;
   }
+
 </style>
 
 <div class="noun"> Noun </div>
@@ -46,14 +48,14 @@ var nounToggle = 0;
 $('#changenoun').click(function() {
   nounToggle = (1 + nounToggle) % nouns.length;
   $('.noun').text(words[wordToggle]);
-)};
+});
 
 $('#makeinsult').click(function() {
   var foo = $('.noun').text();
   var moddy = modifiers[0];
   var insult = moddy + foo;
   $('.noun').text(insult);
-)};
+});
 
 
 $('#boxplay').click(function(){
