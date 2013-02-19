@@ -5,7 +5,6 @@ site=www.jsmenagerie.com
 myarg="$1"
 if [ $myarg = "all" ]
 then
-  echo 'foo'
   s3cmd put *.css s3://$site --acl-public
   s3cmd put *.js s3://$site --acl-public
   s3cmd put --recursive jquerydemos s3://$site --acl-public
