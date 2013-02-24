@@ -1,8 +1,7 @@
 <style type="text/css">
   #box {
     background-color:pink;
-    height: 100px;
-    width:100px;
+    padding: 20px;
     border: 1px solid;
     border-radius:10px;
     -moz-border-radius:10px;
@@ -13,3 +12,9 @@
 
 <br>
 <button id="clicky"> Add Text using AJAX </button>
+
+<script> 
+$('#clicky').click(function() {
+  $('#box').load("jquerydemos/testdata/ajax_test.html");
+});
+</script>
