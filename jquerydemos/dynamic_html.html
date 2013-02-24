@@ -1,3 +1,4 @@
+<div class="jm_html">
 <style type="text/css">
   .nouns {
   color: #464646;
@@ -35,13 +36,15 @@
 <div class="box"></div>
 <br>
 <button id="boxplay">Append a tiny Box</button>
-
+</div>
 
 <script>
 
-var nouns = ["waffle", "mouse", "cow", "pigglet", "rhino", "bird of paradise", "cocoon", "booger", "buttox", "treebeard"];
+var jmJsFuncs = [function() {
 
-var modifiers = ["Your countenance is like a", "Vexing", "Ugly", "Yeasty", "Guzzling", "Smelly", "Stupid", "Tittling"];
+var nouns = ["waffle", "mouse", "cow", "pigglet", "rhino", "bird of paradise", "cocoon", "booger", "buttox", "treebeard", "flowerbox"];
+
+var modifiers = ["Your countenance is like a", "Vexing", "Ugly", "Yeasty", "Guzzling", "Smelly", "Stupid", "Tittling", "Putrid"];
 
 var nounToggle = 0; 
 var insulted = false; 
@@ -69,6 +72,8 @@ $('#makeinsult').click(function() {
 $('#boxplay').click(function(){
   $('.box').append('<div class="box2"></div>');
 });
+
+}];
 
 </script>
 
