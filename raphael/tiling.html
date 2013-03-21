@@ -2,12 +2,14 @@
 <div id="canvas_container"></div>
 
 <script>
+globalPaper = Raphael('canvas_container', "100%", "100%");
 
-globalPaper = Raphael('canvas_container', "100%", "30%");
-
+for (var foo = 0, poo = 10; foo<poo; foo++) {
     for (var i = 0, ii = 10; i < ii; i++) {
-  globalPaper.rect(50 + 100 * i, 50 + 100 * i, 50, 50);
+  globalPaper.rect(50 + 100 * i, 50 + 100 *foo, 50, 50);
     }
+}
+
 
 
 </script>
