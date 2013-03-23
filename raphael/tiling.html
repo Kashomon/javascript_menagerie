@@ -4,10 +4,22 @@
 <script>
 globalPaper = Raphael('canvas_container', "100%", "100%");
 
+var colors = ["red", "blue", "yellow"]
+
 for (var foo = 0, poo = 10; foo<poo; foo++) {
     for (var i = 0, ii = 10; i < ii; i++) {
-  globalPaper.rect(50 + 100 * i, 50 + 100 *foo, 50, 50);
-    }
+    var r  = globalPaper.rect(50 + 100 * i, 50 + 100 *foo, 50, 50);
+    color  = colors[Math.floor(Math.random() * colors.length)]
+      r.square_color = color;
+      r.attr("fill", color);
+      r.hover(
+        function() {
+        this.attr("fill", "orange");
+        }, 
+        function() {
+        this.attr("fill", this.square_color);
+        });
+}
 }
 
 
