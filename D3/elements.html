@@ -1,10 +1,11 @@
 
+<div id="d3_container"></div>
 
 <script> 
 
 d3.json("D3/mydata.json", function(data) {
 
-    var canvas = d3.select("body").append("svg")
+    var canvas = d3.select("#d3_container").append("svg")
         .attr("width", 500)
         .attr("height", 500)
 
